@@ -1,0 +1,145 @@
+{
+  "release": "quan-v1-20261121",
+  "criteria": [
+    "AI Solution & Technical Depth",
+    "Working evidence",
+    "Measurable KPI"
+  ],
+  "provenance": "Simulated: published LBNL office-building plant",
+  "evidence": "Exploratory reused held-out test; not independent confirmation",
+  "selected_model": "HistGradientBoostingClassifier",
+  "AI": {
+    "provenance": "Simulated: published LBNL; detection of existing documented scenarios",
+    "rows": 73932,
+    "eligible_hours": 1232.2,
+    "coverage": 0.13951539855072465,
+    "confusion_matrix_rows_true_normal_fault_columns_predicted_normal_fault": [
+      [
+        17228,
+        310
+      ],
+      [
+        42480,
+        13914
+      ]
+    ],
+    "f1": 0.39406383641564474,
+    "precision": 0.9782058492688414,
+    "recall": 0.24672837535908076,
+    "false_alarm_episodes": 28,
+    "eligible_normal_hours": 292.3,
+    "false_alarm_episodes_per_normal_hour": 0.09579199452617174,
+    "per_case": {
+      "normal": {
+        "rows": 17538,
+        "false_positive_fraction": 0.017675903751853118
+      },
+      "tower_fouling_095": {
+        "rows": 17713,
+        "recall": 0.0446000112911421
+      },
+      "tower_fouling_080": {
+        "rows": 18649,
+        "recall": 0.2039251434393265
+      },
+      "tower_fouling_065": {
+        "rows": 20032,
+        "recall": 0.4653055111821086
+      }
+    }
+  },
+  "logistic_reference": {
+    "provenance": "Simulated: published LBNL; detection of existing documented scenarios",
+    "rows": 73932,
+    "eligible_hours": 1232.2,
+    "coverage": 0.13951539855072465,
+    "confusion_matrix_rows_true_normal_fault_columns_predicted_normal_fault": [
+      [
+        17019,
+        519
+      ],
+      [
+        45096,
+        11298
+      ]
+    ],
+    "f1": 0.3312662180586709,
+    "precision": 0.9560802234069561,
+    "recall": 0.20034046175125014,
+    "false_alarm_episodes": 30,
+    "eligible_normal_hours": 292.3,
+    "false_alarm_episodes_per_normal_hour": 0.10263427984946973,
+    "per_case": {
+      "normal": {
+        "rows": 17538,
+        "false_positive_fraction": 0.02959288402326377
+      },
+      "tower_fouling_095": {
+        "rows": 17713,
+        "recall": 0.040591655845988825
+      },
+      "tower_fouling_080": {
+        "rows": 18649,
+        "recall": 0.1608129122204944
+      },
+      "tower_fouling_065": {
+        "rows": 20032,
+        "recall": 0.37839456869009586
+      }
+    }
+  },
+  "rule": {
+    "provenance": "Simulated: published LBNL; detection of existing documented scenarios",
+    "rows": 73932,
+    "eligible_hours": 1232.2,
+    "coverage": 0.13951539855072465,
+    "confusion_matrix_rows_true_normal_fault_columns_predicted_normal_fault": [
+      [
+        16412,
+        1126
+      ],
+      [
+        48656,
+        7738
+      ]
+    ],
+    "f1": 0.23715100064359926,
+    "precision": 0.8729693140794224,
+    "recall": 0.13721317870695465,
+    "false_alarm_episodes": 16,
+    "eligible_normal_hours": 292.3,
+    "false_alarm_episodes_per_normal_hour": 0.05473828258638385,
+    "per_case": {
+      "normal": {
+        "rows": 17538,
+        "false_positive_fraction": 0.0642034439502794
+      },
+      "tower_fouling_095": {
+        "rows": 17713,
+        "recall": 0.08496584429515046
+      },
+      "tower_fouling_080": {
+        "rows": 18649,
+        "recall": 0.14225963858651938
+      },
+      "tower_fouling_065": {
+        "rows": 20032,
+        "recall": 0.17871405750798722
+      }
+    }
+  },
+  "test_total_rows": 529920,
+  "energy_status": "Pending data validation",
+  "verified_excess_kWh": null,
+  "verified_avoided_kWh": null,
+  "coverage_context": {
+    "total_test_rows": 529920,
+    "operating_gate_rows": 73932,
+    "eligible_rows": 73932,
+    "eligible_fraction_of_all_rows": 0.13951539855072465,
+    "eligible_fraction_of_operating_gate_rows": 1.0,
+    "operating_rows_rejected_by_quality": 0,
+    "operating_rows_rejected_by_domain": 0,
+    "interpretation": "Total-time coverage includes inactive rows; not an86% abstention rate during qualifying operation. No fab coverage inference."
+  }
+}

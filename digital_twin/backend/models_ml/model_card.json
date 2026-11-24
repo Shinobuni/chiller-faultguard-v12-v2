@@ -1,0 +1,40 @@
+{
+  "release": "quan-v1-20261121",
+  "status_date": "2026-11-21",
+  "milestone": "2026-11-24",
+  "component": "Cooling tower 1 heat exchanger fouling within the chiller plant",
+  "task": "Binary detection of existing documented fault scenarios",
+  "model": "HistGradientBoostingClassifier",
+  "features": [
+    "water_range_F",
+    "fan",
+    "flow",
+    "tower_outlet_F",
+    "load_MW",
+    "fan_x_range"
+  ],
+  "feature_semantics": "Native documented columns; no weather/CHW swaps; numerical scenario model pending physical signal verification",
+  "decision": {
+    "threshold": 0.7,
+    "minutes": 5,
+    "f1": 0.6917644328273256,
+    "normal_false_positive_fraction": 0.03537409640126308
+  },
+  "training_rows": 224245,
+  "split": "Corresponding Jan-Jun train / Jul-Sep validation / Oct-Dec test in all four original CSVs",
+  "preprocessing": "Native feature derivation; histogram model fits on train; no learned scaler for selected model; training-fitted bounds reused from baseline",
+  "test_warning": "Prior test results exposed. Reused test is exploratory, never pristine confirmatory. Model choice and thresholds frozen using validation before this run reads test rows.",
+  "runtime": "Offline published CSV replay; engineer advisory; no live connection or commands",
+  "limits": [
+    "Low recall, especially mild scenario",
+    "13.95% eligible coverage is not a full-year capability claim",
+    "Unresolved weather/CHW mappings",
+    "No severity prediction or future degradation forecasting",
+    "No measured onset/offset events: physical event recall and delay pending",
+    "No fab suitability/yield/reliability/capacity guarantee",
+    "Uncalibrated classifier score; domain gates do not establish transferability"
+  ],
+  "energy": "Conditional arithmetic is separate from validated excess electricity; avoided energy is scenario-only or pending field evidence",
+  "source_rights": "Do not redistribute original LBNL CSVs until exact external ZIP rights are confirmed",
+  "review": "Prepared by assistant for Quan; teammate/mentor implementation approval not received"
+}

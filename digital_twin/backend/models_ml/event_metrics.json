@@ -1,0 +1,179 @@
+{
+  "criteria": [
+    "Data and validation",
+    "Working evidence",
+    "Measurable KPI"
+  ],
+  "provenance": "Simulated: published LBNL; exploratory reused held-out outputs",
+  "physical_fault_events": {
+    "status": "Pending independently documented onset/offset and intervention annotations",
+    "correctly_detected_events": null,
+    "missed_events": null,
+    "fault_onset_detection_delay_minutes": null,
+    "reason": "Fixed annual normal/fault scenarios are not a labeled fault-onset trajectory. Eligible-window boundaries are not fault onsets."
+  },
+  "window_definition": "Maximal consecutive eligible one-minute samples within same case; gaps and excluded rows break windows. Zero allowable gap.",
+  "latency_definition": "Elapsed timestamp difference from window start to first confirmed alert; no fault-onset or early-warning claim. Window starts may be censored by test start or operating gate.",
+  "persistence_note": "N consecutive one-minute samples at t0..t(N-1) span N-1 elapsed minutes. Threshold crossings, exclusions and cadence affect delay; dwell setting alone is not a measured detection delay.",
+  "methods": {
+    "original_logistic": {
+      "persistence_samples": 5,
+      "by_case": {
+        "normal": {
+          "eligible_windows": 50,
+          "windows_with_alert": 19,
+          "windows_without_alert": 31,
+          "windows_shorter_than_persistence": 1,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 455.0,
+            "min": 35.0,
+            "max": 974.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_065": {
+          "eligible_windows": 53,
+          "windows_with_alert": 39,
+          "windows_without_alert": 14,
+          "windows_shorter_than_persistence": 1,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 35.0,
+            "min": 4.0,
+            "max": 499.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_080": {
+          "eligible_windows": 48,
+          "windows_with_alert": 31,
+          "windows_without_alert": 17,
+          "windows_shorter_than_persistence": 2,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 153.0,
+            "min": 4.0,
+            "max": 968.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_095": {
+          "eligible_windows": 53,
+          "windows_with_alert": 22,
+          "windows_without_alert": 31,
+          "windows_shorter_than_persistence": 2,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 122.5,
+            "min": 9.0,
+            "max": 972.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        }
+      }
+    },
+    "reference_rule": {
+      "persistence_samples": 15,
+      "by_case": {
+        "normal": {
+          "eligible_windows": 50,
+          "windows_with_alert": 9,
+          "windows_without_alert": 41,
+          "windows_shorter_than_persistence": 6,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 147.0,
+            "min": 56.0,
+            "max": 193.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_065": {
+          "eligible_windows": 53,
+          "windows_with_alert": 12,
+          "windows_without_alert": 41,
+          "windows_shorter_than_persistence": 5,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 142.0,
+            "min": 24.0,
+            "max": 484.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_080": {
+          "eligible_windows": 48,
+          "windows_with_alert": 10,
+          "windows_without_alert": 38,
+          "windows_shorter_than_persistence": 6,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 172.5,
+            "min": 58.0,
+            "max": 541.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_095": {
+          "eligible_windows": 53,
+          "windows_with_alert": 11,
+          "windows_without_alert": 42,
+          "windows_shorter_than_persistence": 7,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 111.0,
+            "min": 20.0,
+            "max": 233.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        }
+      }
+    },
+    "histogram_boosting_candidate": {
+      "persistence_samples": 5,
+      "by_case": {
+        "normal": {
+          "eligible_windows": 50,
+          "windows_with_alert": 19,
+          "windows_without_alert": 31,
+          "windows_shorter_than_persistence": 1,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 116.0,
+            "min": 4.0,
+            "max": 679.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_065": {
+          "eligible_windows": 53,
+          "windows_with_alert": 42,
+          "windows_without_alert": 11,
+          "windows_shorter_than_persistence": 1,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 34.5,
+            "min": 4.0,
+            "max": 541.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_080": {
+          "eligible_windows": 48,
+          "windows_with_alert": 27,
+          "windows_without_alert": 21,
+          "windows_shorter_than_persistence": 2,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 112.0,
+            "min": 4.0,
+            "max": 371.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        },
+        "tower_fouling_095": {
+          "eligible_windows": 53,
+          "windows_with_alert": 21,
+          "windows_without_alert": 32,
+          "windows_shorter_than_persistence": 2,
+          "first_alert_latency_minutes_detected_windows_only": {
+            "median": 85.0,
+            "min": 4.0,
+            "max": 365.0
+          },
+          "interpretation": "Normal windows with alert are false-alarm opportunities; fault windows are observation opportunities, not fault-event recall."
+        }
+      }
+    }
+  }
+}

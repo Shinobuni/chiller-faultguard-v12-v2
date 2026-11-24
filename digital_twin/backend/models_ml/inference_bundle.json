@@ -1,0 +1,274 @@
+{
+  "config": {
+    "seed": 20261119,
+    "train_end": "2018-07-01",
+    "validation_end": "2018-10-01",
+    "ai_thresholds": [
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "rule_thresholds_fraction": [
+      0.4,
+      0.6,
+      0.8,
+      0.9,
+      0.98
+    ],
+    "persistence_minutes": [
+      1,
+      5,
+      15
+    ],
+    "validation_max_false_positive_fraction": 0.05,
+    "minimum_fan_speed": 0.1,
+    "minimum_tower_flow_GPM": 10,
+    "match_load_relative_tolerance": 0.02,
+    "electricity_minimum_logged_load_W": 1000,
+    "match_supply_temperature_F": 0.9,
+    "match_weather_F": 0.1,
+    "boundary": "3 chillers + 3 cooling towers + 3 condenser-water pumps + 3 primary chilled-water pumps + 2 secondary chilled-water pumps",
+    "provenance": "Simulated: published LBNL office-building chiller plant",
+    "review_status": "Proposed by prototype author; Quan, Van, Son, Kha and Ly review pending"
+  },
+  "features": [
+    "water_range_F",
+    "fan",
+    "flow",
+    "tower_outlet_F",
+    "load_MW",
+    "fan_x_range"
+  ],
+  "ai": {
+    "threshold": 0.7,
+    "minutes": 5,
+    "f1": 0.6680682869397023,
+    "normal_false_positive_fraction": 0.046243377958715
+  },
+  "rule": {
+    "threshold": 0.98,
+    "minutes": 15,
+    "f1": 0.5402618274349617,
+    "normal_false_positive_fraction": 0.07519768261175917
+  },
+  "domain_lower": {
+    "water_range_F": -0.3394003999999975,
+    "fan": 0.055077434999999994,
+    "flow": 30.20633761540499,
+    "tower_outlet_F": 57.546522249999995,
+    "load_MW": -0.06066527999326803,
+    "fan_x_range": -0.5264045427765939
+  },
+  "domain_upper": {
+    "water_range_F": 11.910584399999992,
+    "fan": 1.0449972650000001,
+    "flow": 601.122827068695,
+    "tower_outlet_F": 89.31643274999999,
+    "load_MW": 1.2739508799996795,
+    "fan_x_range": 11.89439783537031
+  },
+  "scaler_training_mean": [
+    5.088374717585676,
+    0.7537251773140894,
+    316.85366615005915,
+    69.01936612924703,
+    0.2818114879779424,
+    4.398675786065671
+  ],
+  "scaler_training_samples": 224245,
+  "coefficients_on_scaled_features": [
+    [
+      -5.499660650666399,
+      1.3158600766379371,
+      -0.31036452456378166,
+      1.169339361574485,
+      -0.2607249624309268,
+      3.8469377274548715
+    ]
+  ],
+  "intercept": [
+    0.3026033950000787
+  ],
+  "test_used_for_selection": false,
+  "review_status": "Teammate review pending",
+  "validation_grid": {
+    "ai": [
+      {
+        "threshold": 0.3,
+        "minutes": 1,
+        "f1": 0.8745306990406737,
+        "normal_false_positive_fraction": 0.6134163208852006
+      },
+      {
+        "threshold": 0.3,
+        "minutes": 5,
+        "f1": 0.8690114567416953,
+        "normal_false_positive_fraction": 0.573018606957384
+      },
+      {
+        "threshold": 0.3,
+        "minutes": 15,
+        "f1": 0.8548860426208826,
+        "normal_false_positive_fraction": 0.4875127221482815
+      },
+      {
+        "threshold": 0.5,
+        "minutes": 1,
+        "f1": 0.8283222754122225,
+        "normal_false_positive_fraction": 0.2230616665361831
+      },
+      {
+        "threshold": 0.5,
+        "minutes": 5,
+        "f1": 0.8150406795027796,
+        "normal_false_positive_fraction": 0.18659150812912653
+      },
+      {
+        "threshold": 0.5,
+        "minutes": 15,
+        "f1": 0.7831536425198543,
+        "normal_false_positive_fraction": 0.1222239620031838
+      },
+      {
+        "threshold": 0.7,
+        "minutes": 1,
+        "f1": 0.6912541593065769,
+        "normal_false_positive_fraction": 0.06413267569612986
+      },
+      {
+        "threshold": 0.7,
+        "minutes": 5,
+        "f1": 0.6680682869397023,
+        "normal_false_positive_fraction": 0.046243377958715
+      },
+      {
+        "threshold": 0.7,
+        "minutes": 15,
+        "f1": 0.6188898725939129,
+        "normal_false_positive_fraction": 0.019990083248519013
+      },
+      {
+        "threshold": 0.9,
+        "minutes": 1,
+        "f1": 0.34746594005449594,
+        "normal_false_positive_fraction": 0.012852631853649625
+      },
+      {
+        "threshold": 0.9,
+        "minutes": 5,
+        "f1": 0.32124400543983966,
+        "normal_false_positive_fraction": 0.006693807249667267
+      },
+      {
+        "threshold": 0.9,
+        "minutes": 15,
+        "f1": 0.2811628248421671,
+        "normal_false_positive_fraction": 0.0014875127221482816
+      }
+    ],
+    "rule": [
+      {
+        "threshold": 0.4,
+        "minutes": 1,
+        "f1": 0.8409090480847319,
+        "normal_false_positive_fraction": 0.9596283827866071
+      },
+      {
+        "threshold": 0.4,
+        "minutes": 5,
+        "f1": 0.8365955750448475,
+        "normal_false_positive_fraction": 0.944779352279548
+      },
+      {
+        "threshold": 0.4,
+        "minutes": 15,
+        "f1": 0.8265525121652973,
+        "normal_false_positive_fraction": 0.9094444009499204
+      },
+      {
+        "threshold": 0.6,
+        "minutes": 1,
+        "f1": 0.8164312160824199,
+        "normal_false_positive_fraction": 0.8692815574519168
+      },
+      {
+        "threshold": 0.6,
+        "minutes": 5,
+        "f1": 0.8105336463846552,
+        "normal_false_positive_fraction": 0.8465121741172786
+      },
+      {
+        "threshold": 0.6,
+        "minutes": 15,
+        "f1": 0.796439585829372,
+        "normal_false_positive_fraction": 0.7934966987656255
+      },
+      {
+        "threshold": 0.8,
+        "minutes": 1,
+        "f1": 0.767840012484681,
+        "normal_false_positive_fraction": 0.44913750358829824
+      },
+      {
+        "threshold": 0.8,
+        "minutes": 5,
+        "f1": 0.756199216941018,
+        "normal_false_positive_fraction": 0.41585114434092746
+      },
+      {
+        "threshold": 0.8,
+        "minutes": 15,
+        "f1": 0.7285950155231408,
+        "normal_false_positive_fraction": 0.3475168976225893
+      },
+      {
+        "threshold": 0.9,
+        "minutes": 1,
+        "f1": 0.6869843434475886,
+        "normal_false_positive_fraction": 0.2127795610532634
+      },
+      {
+        "threshold": 0.9,
+        "minutes": 5,
+        "f1": 0.6705233821167756,
+        "normal_false_positive_fraction": 0.19239802708838957
+      },
+      {
+        "threshold": 0.9,
+        "minutes": 15,
+        "f1": 0.6334498396994748,
+        "normal_false_positive_fraction": 0.1527310211644354
+      },
+      {
+        "threshold": 0.98,
+        "minutes": 1,
+        "f1": 0.6016953553725685,
+        "normal_false_positive_fraction": 0.10824917142931705
+      },
+      {
+        "threshold": 0.98,
+        "minutes": 5,
+        "f1": 0.5824207772070937,
+        "normal_false_positive_fraction": 0.0957227485059631
+      },
+      {
+        "threshold": 0.98,
+        "minutes": 15,
+        "f1": 0.5402618274349617,
+        "normal_false_positive_fraction": 0.07519768261175917
+      }
+    ]
+  },
+  "scaler_training_scale": [
+    2.6505302253758853,
+    0.24242530707321674,
+    13.823028377907566,
+    6.646862039959845,
+    0.18782022940333506,
+    2.922207216816462
+  ],
+  "frozen_decisions_sha256": "a8ca6e020b36a965d138151a9c2b7876928d09f82ac17833a63559f175742106",
+  "export_note": "Classifier coefficients unchanged; missing scaler scale recovered using original training rows only. No model/threshold selection or test fitting.",
+  "component": "Cooling tower 1 heat exchanger fouling within the chiller plant"
+}
